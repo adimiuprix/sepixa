@@ -18,8 +18,8 @@ class LicenceController extends BaseController
 
     public function checkLicence()
     {
-        $status = false; // Set status awal menjadi false
-        $message = "License invalid"; // Set pesan default
+        $status = false;
+        $message = "License invalid";
     
         $domain = $this->request->getPost('domain');
         $licenseKey = $this->request->getPost('license_key');
@@ -27,8 +27,6 @@ class LicenceController extends BaseController
         if (!empty($domain) && !empty($licenseKey)) {
             $isValid = $this->licenseModel->checkLicense($domain, $licenseKey);
             if ($isValid) {
-                // Jika lisensi valid, ubah status menjadi true
-                // dan ubah pesan menjadi "License valid"
                 $status = true;
                 $message = "License valid";
             }
