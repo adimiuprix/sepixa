@@ -7,6 +7,11 @@ use App\Models\LicenseModel;
 
 class LicenceController extends BaseController
 {
+    /**
+     * @var LicenseModel
+    */
+    protected $licenseModel;
+
     public function __construct()
     {
         $this->licenseModel = new LicenseModel();
@@ -18,9 +23,6 @@ class LicenceController extends BaseController
 
     public function checkLicence()
     {
-        $status = false; // Set status awal menjadi false
-        $message = "License invalid"; // Set pesan default
-
         $domain = $this->request->getPost('domain');
         $licenseKey = $this->request->getPost('license_key');
 
