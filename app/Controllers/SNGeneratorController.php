@@ -13,7 +13,7 @@ class SNGeneratorController extends BaseController
     }
 
     public function generate()
-    {        
+    {
         // Get instance SerialNumberGenerator via Dependency Injection
         $SnGenerator = new SerialNumberGenerator();
         $LicenseModel = new LicenseModel();
@@ -21,6 +21,7 @@ class SNGeneratorController extends BaseController
         $data = [
             'domain' => $this->request->getVar('domain'),
             'license_key' => $SnGenerator->generate(),
+            'status' => 'active'
         ];
 
         $LicenseModel->insert($data);

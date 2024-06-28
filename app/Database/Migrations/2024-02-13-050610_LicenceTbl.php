@@ -23,6 +23,11 @@ class LicenceTbl extends Migration
                 'type'           => 'VARCHAR',
                 'constraint'     => 255
             ],
+            'status' => [
+                'type'       => 'ENUM',
+                'constraint' => ['active', 'inactive'],
+                'default'    => 'inactive',
+            ],
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('licenses');

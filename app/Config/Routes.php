@@ -13,3 +13,5 @@ $routes->post('api/licvalidation', 'LicenceController::endpoint');
 
 $routes->get('generate', 'SNGeneratorController::index');
 $routes->post('generate', 'SNGeneratorController::generate');
+
+$routes->get('domain/(:segment)', 'DomainCheckController::index/$1');

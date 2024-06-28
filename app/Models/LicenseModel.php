@@ -11,7 +11,7 @@ class LicenseModel extends Model
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $protectFields    = true;
-    protected $allowedFields    = ['domain', 'license_key'];
+    protected $allowedFields    = ['domain', 'license_key', 'status'];
 
     public function checkLicense($domain, $licenseKey)
     {
