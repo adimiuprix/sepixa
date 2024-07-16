@@ -6,6 +6,9 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'HomepageController::index');
+$routes->get('category/(:segment)', 'HomepageController::category/$1');
+$routes->get('product/(:segment)', 'HomepageController::productDetail/$1');
+
 $routes->get('ceklic', 'LicenceController::index');
 $routes->post('cekval', 'LicenceController::checkLicence');
 

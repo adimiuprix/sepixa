@@ -19,4 +19,13 @@ class HomepageController extends BaseController
 
         return view('home', compact('categories', 'products'));
     }
+
+    public function category(string $slug)
+    {
+        $IdCategory = (new Category())->where('slug', $slug)->get()->getRow()->id;
+        $products = (new Product())->where('id_category', $IdCategory)->findAll();
+
+        return view('categories',);
+    }
+
 }
