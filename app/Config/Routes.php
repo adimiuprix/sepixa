@@ -5,8 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-
-$routes->get('/', 'LicenceController::index');
+$routes->get('/', 'HomepageController::index');
+$routes->get('ceklic', 'LicenceController::index');
 $routes->post('cekval', 'LicenceController::checkLicence');
 
 $routes->post('api/licvalidation', 'LicenceController::endpoint');
