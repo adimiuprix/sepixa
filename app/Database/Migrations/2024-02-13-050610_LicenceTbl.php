@@ -28,6 +28,7 @@ class LicenceTbl extends Migration
                 'constraint' => ['active', 'inactive'],
                 'default'    => 'inactive',
             ],
+            'create_at DATETIME DEFAULT CURRENT_TIMESTAMP',
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('licenses');
