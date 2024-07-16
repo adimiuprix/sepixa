@@ -48,22 +48,22 @@
                                 <div class="position-absolute top-0 start-0">
                                     <span class="badge bg-danger">Sale</span>
                                 </div>
-                                <a href="">
+                                <a href="<?= base_url('product/' . $product->slug) ; ?>">
                                     <img src="<?= render('product', $product->image) ; ?>" alt="image-pcs" class="mb-3 img-fluid" />
                                 </a>
                                 <div class="card-product-action">
-                                    <a href="" class="btn-action">
+                                    <a href="<?= base_url('product/' . $product->slug) ; ?>" class="btn-action">
                                         <i class="bi bi-eye" data-bs-toggle="tooltip" data-bs-html="true" title="Quick View"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="text-small mb-1">
-                                <a href="" class="text-decoration-none text-muted">
+                                <a href="<?= base_url('product/' . $product->slug) ; ?>" class="text-decoration-none text-muted">
                                     <small><?= $product->category_name ; ?></small>
                                 </a>
                             </div>
                             <h2 class="fs-6">
-                                <a href="" class="text-inherit text-decoration-none">
+                                <a href="<?= base_url('product/' . $product->slug) ; ?>" class="text-inherit text-decoration-none">
                                 <?= $product->product_name ; ?>
                                 </a>
                             </h2>
@@ -72,7 +72,7 @@
                                     <span class="text-dark"><?= $product->price ; ?></span>
                                 </div>
                                 <div>
-                                    <a href="#!" class="btn btn-primary btn-sm">
+                                    <a href="<?= base_url('product/' . $product->slug) ; ?>" class="btn btn-primary btn-sm">
                                         Buy
                                     </a>
                                 </div>

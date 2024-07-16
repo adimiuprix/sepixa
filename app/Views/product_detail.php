@@ -1,51 +1,32 @@
 <?= $this->extend('partialls/layout') ?>
 <?= $this->section('content') ?>
 <main>
-    <div class="mt-4">
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <!-- col -->
-                <div class="col-12">
-                    <!-- breadcrumb -->
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Bakery Biscuits</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Napolitanke Ljesnjak</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
     <section class="mt-8">
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-xl-6">
                     <!-- img slide -->
                     <div class="product" id="product">
-                        <div class="zoom" onmousemove="zoom(event)" style="background-image: url(../assets/images/products/product-single-img-1.jpg)">
+                        <div class="zoom" onmousemove="zoom(event)" style="background-image: url(https://fecart.com/public/uploads/product/product-single-img-1.jpg)">
                             <!-- img -->
-                            <!-- img -->
-                            <img src="../assets/images/products/product-single-img-1.jpg" alt="" />
+                            <img src="https://fecart.com/public/uploads/product/product-single-img-1.jpg" alt="" />
                         </div>
                         <div>
-                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(../assets/images/products/product-single-img-2.jpg)">
+                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(https://fecart.com/public/uploads/product/product-single-img-2.jpg)">
                                 <!-- img -->
-                                <img src="../assets/images/products/product-single-img-2.jpg" alt="" />
+                                <img src="https://fecart.com/public/uploads/product/product-single-img-2.jpg" alt="" />
                             </div>
                         </div>
                         <div>
-                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(../assets/images/products/product-single-img-3.jpg)">
+                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(https://fecart.com/public/uploads/product/product-single-img-3.jpg)">
                                 <!-- img -->
-                                <img src="../assets/images/products/product-single-img-3.jpg" alt="" />
+                                <img src="https://fecart.com/public/uploads/product/product-single-img-3.jpg" alt="" />
                             </div>
                         </div>
                         <div>
-                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(../assets/images/products/product-single-img-4.jpg)">
+                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(https://fecart.com/public/uploads/product/product-single-img-4.jpg)">
                                 <!-- img -->
-                                <img src="../assets/images/products/product-single-img-4.jpg" alt="" />
+                                <img src="https://fecart.com/public/uploads/product/product-single-img-4.jpg" alt="" />
                             </div>
                         </div>
                     </div>
@@ -55,25 +36,25 @@
                             <div class="col-3">
                                 <div class="thumbnails-img">
                                     <!-- img -->
-                                    <img src="../assets/images/products/product-single-img-1.jpg" alt="" />
+                                    <img src="https://fecart.com/public/uploads/product/product-single-img-1.jpg" alt="" />
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="thumbnails-img">
                                     <!-- img -->
-                                    <img src="../assets/images/products/product-single-img-2.jpg" alt="" />
+                                    <img src="https://fecart.com/public/uploads/product/product-single-img-2.jpg" alt="" />
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="thumbnails-img">
                                     <!-- img -->
-                                    <img src="../assets/images/products/product-single-img-3.jpg" alt="" />
+                                    <img src="https://fecart.com/public/uploads/product/product-single-img-3.jpg" alt="" />
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="thumbnails-img">
                                     <!-- img -->
-                                    <img src="../assets/images/products/product-single-img-4.jpg" alt="" />
+                                    <img src="https://fecart.com/public/uploads/product/product-single-img-4.jpg" alt="" />
                                 </div>
                             </div>
                         </div>

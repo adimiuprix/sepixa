@@ -25,7 +25,41 @@ class HomepageController extends BaseController
         $IdCategory = (new Category())->where('slug', $slug)->get()->getRow()->id;
         $products = (new Product())->where('id_category', $IdCategory)->findAll();
 
-        return view('categories',);
+        return view('categories');
+    }
+
+    public function productDetail(string $slug)
+    {
+        $detail = (new Product())->where('slug', $slug)->get()->getRow();
+
+        return view('product_detail', compact('detail'));
+    }
+
+    public function allProduct()
+    {
+        $products = (new Product())->findAll();
+
+        return view('product');
+    }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function thermscondition()
+    {
+        return view('therms_n_condition');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function news()
+    {
+        return view('news');
     }
 
 }
