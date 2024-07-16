@@ -17,7 +17,7 @@
                     <a href="<?= base_url('category/'.$category->slug) ; ?>" class="text-decoration-none text-inherit">
                         <div class="card card-product mb-lg-4">
                             <div class="card-body text-center py-8">
-                                <img src="<?= $img_cat . $category->image; ?>" alt="category" class="mb-3 img-fluid" />
+                                <img src="<?= render('category', $category->image) ?>" alt="category" class="mb-3 img-fluid" />
                                 <div class="text-truncate">
                                     <?= $category->name; ?>
                                 </div>
@@ -49,7 +49,7 @@
                                     <span class="badge bg-danger">Sale</span>
                                 </div>
                                 <a href="">
-                                    <img src="<?= $img_prod . $product->image; ?>" alt="image-pcs" class="mb-3 img-fluid" />
+                                    <img src="<?= render('product', $product->image) ; ?>" alt="image-pcs" class="mb-3 img-fluid" />
                                 </a>
                                 <div class="card-product-action">
                                     <a href="" class="btn-action">
@@ -59,17 +59,17 @@
                             </div>
                             <div class="text-small mb-1">
                                 <a href="" class="text-decoration-none text-muted">
-                                    <small>Snack & Munchies</small>
+                                    <small><?= $product->category_name ; ?></small>
                                 </a>
                             </div>
                             <h2 class="fs-6">
                                 <a href="" class="text-inherit text-decoration-none">
-                                    Haldiram's Sev Bhujia
+                                <?= $product->product_name ; ?>
                                 </a>
                             </h2>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <div>
-                                    <span class="text-dark">$18</span>
+                                    <span class="text-dark"><?= $product->price ; ?></span>
                                 </div>
                                 <div>
                                     <a href="#!" class="btn btn-primary btn-sm">

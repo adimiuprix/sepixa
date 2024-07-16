@@ -95,5 +95,5 @@ class Autoload extends AutoloadConfig
      *
      * @var list<string>
      */
-    public $helpers = ['asset_helper'];
+    public $helpers = ['asset_helper', 'image_render_helper'];
 }

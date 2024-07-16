@@ -10,11 +10,13 @@ class HomepageController extends BaseController
 {
     public function index()
     {
-        $img_cat = base_url('public/uploads/category/');
-        $img_prod = base_url('public/uploads/product/');
         $categories = (new Category)->get()->getResult();
-        $products = (new Product())->get()->getResult();
-        // dd($products);
-        return view('home', compact('img_cat', 'img_prod', 'categories', 'products'));
+        $products = (new Product())
+                ->select('products.*, categories.name as category_name')
+                ->join('categories', 'categories.id = products.id_category')
+                ->get()
+                ->getResult();
+
+        return view('home', compact('categories', 'products'));
     }
 }
