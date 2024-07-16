@@ -17,10 +17,13 @@
                             <a class="nav-link" href="<?= base_url('products');?>">Product</a>
                         </li>
                         <li class="nav-item w-100 w-lg-auto">
+                            <a class="nav-link" href="<?= base_url('licence');?>">Check Licence</a>
+                        </li>
+                        <li class="nav-item w-100 w-lg-auto">
                             <a class="nav-link" href="<?= base_url('about');?>">About Us</a>
                         </li>
                         <li class="nav-item w-100 w-lg-auto">
-                            <a class="nav-link" href="<?= base_url('about');?>">Therms & Conditions</a>
+                            <a class="nav-link" href="<?= base_url('therms_and_condition');?>">Therms & Conditions</a>
                         </li>
                         <li class="nav-item w-100 w-lg-auto">
                             <a class="nav-link" href="<?= base_url('contact');?>">Contact Us</a>
@@ -47,7 +50,7 @@
                             </ul>
                         </li>
                         <li class="nav-item w-100 w-lg-auto">
-                            <a class="nav-link" href="dashboard/index.html">Dashboard</a>
+                            <a class="nav-link" href="">Dashboard</a>
                         </li>
                         <li class="nav-item dropdown w-100 w-lg-auto dropdown-flyout">
                             <a class="nav-link" href="#" id="navbarDropdownDocs" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>

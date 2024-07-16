@@ -10,37 +10,6 @@
                 <?= $this->include('partialls/all_categories');?>
 
                 <div class="col-12 col-lg-9 col-md-8">
-                    <div class="mb-8 bg-light d-lg-flex justify-content-lg-between rounded">
-                        <div class="align-self-center p-8">
-                            <div class="mb-3">
-                                <h5 class="mb-0 fw-bold">E-Grocery Super Market</h5>
-                                <p class="mb-0 text-muted">Whatever the occasion, we've got you covered.</p>
-                            </div>
-                            <div class="position-relative">
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Search E-Grocery Super Market" />
-                                <span class="position-absolute end-0 top-0 mt-2 me-3">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="14"
-                                        height="14"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-search">
-                                        <circle cx="11" cy="11" r="8"></circle>
-                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                    </svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="py-4">
-                            <!-- img -->
-                            <img src="../assets/images/svg-graphics/store-graphics.svg" alt="" class="img-fluid" />
-                        </div>
-                    </div>
                     <div class="d-md-flex justify-content-between mb-3 align-items-center">
                         <div>
                             <p class="mb-3 mb-md-0">24 Products found</p>
@@ -48,6 +17,7 @@
                     </div>
                     <!-- row -->
                     <div class="row g-4 row-cols-xl-4 row-cols-lg-3 row-cols-2 row-cols-md-2 mt-2">
+                        <?php foreach($products as $product):?>
                         <div class="col">
                             <!-- card -->
                             <div class="card card-product">
@@ -118,6 +88,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php endforeach; ?>
                     </div>
 
                     <!-- row -->
@@ -152,6 +123,7 @@
                             </nav>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

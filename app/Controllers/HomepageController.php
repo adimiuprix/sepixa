@@ -22,10 +22,11 @@ class HomepageController extends BaseController
 
     public function category(string $slug)
     {
+        $AllCategory = (new Category())->get()->getResultObject();
         $IdCategory = (new Category())->where('slug', $slug)->get()->getRow()->id;
         $products = (new Product())->where('id_category', $IdCategory)->findAll();
 
-        return view('categories');
+        return view('categories', compact('AllCategory'));
     }
 
     public function productDetail(string $slug)
@@ -37,9 +38,10 @@ class HomepageController extends BaseController
 
     public function allProduct()
     {
+        $AllCategory = (new Category())->get()->getResultObject();
         $products = (new Product())->findAll();
 
-        return view('product');
+        return view('product', compact('AllCategory', 'products'));
     }
 
     public function about()

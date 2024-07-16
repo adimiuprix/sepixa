@@ -7,7 +7,13 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'HomepageController::index');
 $routes->get('category/(:segment)', 'HomepageController::category/$1');
+$routes->get('products', 'HomepageController::allProduct');
 $routes->get('product/(:segment)', 'HomepageController::productDetail/$1');
+
+$routes->get('about', 'HomepageController::about');
+$routes->get('therms_and_condition', 'HomepageController::thermscondition');
+$routes->get('contact', 'HomepageController::contact');
+$routes->get('news', 'HomepageController::news');
 
 $routes->get('ceklic', 'LicenceController::index');
 $routes->post('cekval', 'LicenceController::checkLicence');
