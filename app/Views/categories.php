@@ -10,37 +10,7 @@
                 <?= $this->include('partialls/all_categories');?>
 
                 <div class="col-12 col-lg-9 col-md-8">
-                    <div class="mb-8 bg-light d-lg-flex justify-content-lg-between rounded">
-                        <div class="align-self-center p-8">
-                            <div class="mb-3">
-                                <h5 class="mb-0 fw-bold">E-Grocery Super Market</h5>
-                                <p class="mb-0 text-muted">Whatever the occasion, we've got you covered.</p>
-                            </div>
-                            <div class="position-relative">
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Search E-Grocery Super Market" />
-                                <span class="position-absolute end-0 top-0 mt-2 me-3">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="14"
-                                        height="14"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-search">
-                                        <circle cx="11" cy="11" r="8"></circle>
-                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                    </svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="py-4">
-                            <!-- img -->
-                            <img src="../assets/images/svg-graphics/store-graphics.svg" alt="" class="img-fluid" />
-                        </div>
-                    </div>
+
                     <div class="d-md-flex justify-content-between mb-3 align-items-center">
                         <div>
                             <p class="mb-3 mb-md-0">24 Products found</p>
@@ -48,76 +18,47 @@
                     </div>
                     <!-- row -->
                     <div class="row g-4 row-cols-xl-4 row-cols-lg-3 row-cols-2 row-cols-md-2 mt-2">
-                        <div class="col">
-                            <!-- card -->
+                        <?php foreach($products as $product):?>
+                        <div class="col-lg-3 col-md-3 col-sm-12">
                             <div class="card card-product">
                                 <div class="card-body">
                                     <div class="text-center position-relative">
-                                        <!-- badge -->
                                         <div class="position-absolute top-0 start-0">
                                             <span class="badge bg-danger">Sale</span>
                                         </div>
-                                        <a href="#!">
-                                            <!-- img -->
-                                            <img src="../assets/images/products/product-img-1.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" />
+                                        <a href="<?= base_url('product/' . $product->slug) ; ?>">
+                                            <img src="<?= render('product', $product->image) ; ?>" alt="image-pcs" class="mb-3 img-fluid" />
                                         </a>
-                                        <!-- btn action -->
                                         <div class="card-product-action">
-                                            <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                                            <i class="bi bi-eye" data-bs-toggle="tooltip" data-bs-html="true" title="Quick View"></i>
+                                            <a href="<?= base_url('product/' . $product->slug) ; ?>" class="btn-action">
+                                                <i class="bi bi-eye" data-bs-toggle="tooltip" data-bs-html="true" title="Quick View"></i>
                                             </a>
-                                            <a href="#!" class="btn-action" data-bs-toggle="tooltip" data-bs-html="true" title="Wishlist"><i class="bi bi-heart"></i></a>
-                                            <a href="#!" class="btn-action" data-bs-toggle="tooltip" data-bs-html="true" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
                                         </div>
                                     </div>
                                     <div class="text-small mb-1">
-                                        <a href="#!" class="text-decoration-none text-muted"><small>Snack & Munchies</small></a>
+                                        <a href="<?= base_url('product/' . $product->slug) ; ?>" class="text-decoration-none text-muted">
+                                            <small><?= $product->category_name ; ?></small>
+                                        </a>
                                     </div>
                                     <h2 class="fs-6">
-                                        <a href="#!" class="text-inherit text-decoration-none">Haldiram's Sev Bhujia</a>
+                                        <a href="<?= base_url('product/' . $product->slug) ; ?>" class="text-inherit text-decoration-none">
+                                        <?= $product->product_name ; ?>
+                                        </a>
                                     </h2>
-                                    <div>
-                                        <!-- rating -->
-                                        <small class="text-warning">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-half"></i>
-                                        </small>
-                                        <!-- text -->
-                                        <span class="text-muted small">4.5(149)</span>
-                                    </div>
-                                    <!-- price -->
                                     <div class="d-flex justify-content-between align-items-center mt-3">
                                         <div>
-                                            <span class="text-dark">$18</span>
-                                            <span class="text-decoration-line-through text-muted">$24</span>
+                                            <span class="text-dark"><?= $product->price ; ?></span>
                                         </div>
                                         <div>
-                                            <!-- btn -->
-                                            <a href="#!" class="btn btn-primary btn-sm">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="16"
-                                                    height="16"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    class="feather feather-plus">
-                                                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                </svg>
-                                                Add
+                                            <a href="<?= base_url('product/' . $product->slug) ; ?>" class="btn btn-primary btn-sm">
+                                                Buy
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php endforeach; ?>
                     </div>
 
                     <!-- row -->
@@ -153,6 +94,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
