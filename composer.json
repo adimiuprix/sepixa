@@ -11,6 +11,7 @@
     },
     "require": {
         "php": "^7.4 || ^8.0",
+        "bertugfahriozer/ci4shoppingcart": "^1.1",
         "codeigniter4/framework": "^4.0",
         "rundiz/serial-number-generator": "^0.1.0"
     },

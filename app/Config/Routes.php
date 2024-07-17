@@ -9,6 +9,8 @@ $routes->get('/', 'HomepageController::index');
 $routes->get('category/(:segment)', 'HomepageController::category/$1');
 $routes->get('products', 'HomepageController::allProduct');
 $routes->get('product/(:segment)', 'HomepageController::productDetail/$1');
+$routes->post('add_to_cart', 'ShoppingCartController::AddToCart');
+$routes->get('cart', 'ShoppingCartController::Cart');
 
 $routes->get('about', 'HomepageController::about');
 $routes->get('therms_and_condition', 'HomepageController::thermscondition');

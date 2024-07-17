@@ -4,8 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4da83aab296a4c0c7be2b9924a6f8364",
+    "content-hash": "55157631dc59086f2f32d407055ba991",
     "packages": [
+        {
+            "name": "bertugfahriozer/ci4shoppingcart",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bertugfahriozer/ci4shoppingcart.git",
+                "reference": "1433d2b17c04cdba063985a4da6751c1540b7947"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bertugfahriozer/ci4shoppingcart/zipball/1433d2b17c04cdba063985a4da6751c1540b7947",
+                "reference": "1433d2b17c04cdba063985a4da6751c1540b7947",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4||^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ci4shoppingcart\\": "app/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bertuğ Fahri ÖZER",
+                    "email": "bertugfahriozer@gmail.com",
+                    "homepage": "https://bertugfahriozer.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Codeigniter 4 Shopping Cart",
+            "support": {
+                "forum": "https://bertugfahriozer.com/",
+                "issues": "https://github.com/bertugfahriozer/ci4shoppingcart/issues",
+                "source": "https://github.com/bertugfahriozer/ci4shoppingcart"
+            },
+            "time": "2024-07-11T03:49:07+00:00"
+        },
         {
             "name": "codeigniter4/framework",
             "version": "v4.4.5",
@@ -2224,5 +2267,5 @@
         "php": "^7.4 || ^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

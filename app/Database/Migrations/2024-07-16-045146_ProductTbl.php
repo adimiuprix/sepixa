@@ -31,7 +31,7 @@ class ProductTbl extends Migration
             ],
             'image' => [
                 'type' => 'VARCHAR',
-                'constraint' => '255',
+                'constraint' => '80',
             ],
             'description' => [
                 'type' => 'TEXT',
@@ -40,6 +40,10 @@ class ProductTbl extends Migration
             'price' => [
                 'type'       => 'DECIMAL',
                 'constraint' => '10,2',
+            ],
+            'code_product' => [
+                'type' => 'VARCHAR',
+                'constraint' => '20',
             ],
             'create_at DATETIME DEFAULT CURRENT_TIMESTAMP',
         ]);
