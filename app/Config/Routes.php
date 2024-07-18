@@ -10,6 +10,7 @@ $routes->get('category/(:segment)', 'HomepageController::category/$1');
 $routes->get('products', 'HomepageController::allProduct');
 $routes->get('product/(:segment)', 'HomepageController::productDetail/$1');
 $routes->post('add_to_cart', 'ShoppingCartController::AddToCart');
+$routes->post('remove_cart/(:any)', 'ShoppingCartController::RemoveCart/$1');
 $routes->get('cart', 'ShoppingCartController::Cart');
 
 $routes->get('about', 'HomepageController::about');

@@ -75,6 +75,7 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <?php foreach ($cart->contents() as $items): ?>
+                                <?php var_dump($items); ?>
                             <!-- list group -->
                             <li class="list-group-item py-3 ps-0 border-top">
                                 <!-- row -->
@@ -87,10 +88,10 @@
                                                 <a href="shop-single.html" class="text-inherit">
                                                     <h6 class="mb-0"><?php echo $items['name']; ?></h6>
                                                 </a>
-                                                <span><small class="text-muted">.98 / lb</small></span>
+                                                <!-- <span><small class="text-muted">.98 / lb</small></span> -->
                                                 <!-- text -->
                                                 <div class="mt-2 small lh-1">
-                                                    <a href="#!" class="text-decoration-none text-inherit">
+                                                    <a href="<?php echo base_url('remove_cart/' . $items['id']); ?>" data-id="<?php echo $items['id']; ?>" row-id="<?php echo $items['rowid']; ?>" class="remove-item text-decoration-none text-inherit">
                                                         <span class="me-1 align-text-bottom">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 text-success">
                                                                 <polyline points="3 6 5 6 21 6"></polyline>
@@ -117,7 +118,7 @@
                                     </div>
                                     <!-- price -->
                                     <div class="col-2 text-lg-end text-start text-md-end col-md-2">
-                                        <span class="fw-bold">$5.00</span>
+                                        <span class="fw-bold">$<?php echo $cart->format_number($items['subtotal']); ?></span>
                                     </div>
                                 </div>
                             </li>

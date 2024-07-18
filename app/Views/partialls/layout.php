@@ -303,5 +303,47 @@
         <script src="<?= theme('libs/tiny-slider/dist/min/tiny-slider.js'); ?>"></script>
         <script src="<?= theme('js/vendors/tns-slider.js'); ?>"></script>
         <script src="<?= theme('js/vendors/zoom.js'); ?>"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const links = document.querySelectorAll('.remove-item');
+
+                links.forEach(link => {
+                    link.addEventListener('click', async function() {
+                        const itemId = this.getAttribute('row-id');
+                        await removeCartItem(itemId);
+                    });
+                });
+
+                async function removeCartItem(itemId) {
+                    const response = await fetch(`/remove_cart/${itemId}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ itemId })
+                    });
+
+                    const data = await response.json();
+                    console.log('Item removed successfully:', data);
+                }
+            });
+
+            document.querySelectorAll('.remove-item').forEach(element => {
+                element.addEventListener('click', async event => {
+                    event.preventDefault();
+                    const response = await fetch(element.href, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    });
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok.');
+                    }
+                    const responseData = await response.text();
+                    location.reload();
+                });
+            });
+        </script>
     </body>
 </html>

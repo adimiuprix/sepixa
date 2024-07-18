@@ -18,6 +18,7 @@ class ShoppingCartController extends BaseController
     {
         $imgcart = base_url('public/uploads/product/');
         $cart = $this->cart;
+
         return view('cart', compact('cart', 'imgcart'));
     }
 
@@ -36,4 +37,14 @@ class ShoppingCartController extends BaseController
 
         return redirect()->to('cart');
     }
+
+    public function RemoveCart($rowid)
+    {
+        // $rowid = 'c4ca4238a0b923820dcc509a6f75849b';
+
+        $this->cart->remove($rowid);
+
+        return redirect()->to('cart');
+    }
+
 }
