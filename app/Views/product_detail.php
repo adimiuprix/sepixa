@@ -84,53 +84,59 @@
                             <span class="fw-bold text-dark">$<?= $detail->price; ?></span>
                         </div>
                         <!-- hr -->
-                        <hr class="my-6" />
-                        <div>
-                            <!-- input -->
-                            <div class="input-group input-spinner">
-                                <input type="button" value="-" class="button-minus btn btn-sm" data-field="quantity" />
-                                <input type="number" step="1" max="10" value="1" name="quantity" class="quantity-field form-control-sm form-input" />
-                                <input type="button" value="+" class="button-plus btn btn-sm" data-field="quantity" />
+                        <form action="<?= base_url('add_to_cart');?>" method="post">
+                            <input type="hidden" value="<?= $detail->id; ?>" name="id_product" class="button-minus btn btn-sm" data-field="id_product" />
+                            <input type="hidden" value="<?= $detail->product_name; ?>" name="name" class="button-minus btn btn-sm" data-field="name" />
+                            <input type="hidden" value="<?= $detail->price; ?>" name="price" class="button-minus btn btn-sm" data-field="price" />
+                            <input type="hidden" value="<?= $detail->code_product;?>" name="code" class="button-minus btn btn-sm" data-field="code" />
+                            <input type="hidden" value="<?= $detail->image;?>" name="image" class="button-minus btn btn-sm" data-field="image" />
+                            <hr class="my-6" />
+                            <div>
+                                <!-- input -->
+                                <div class="input-group input-spinner">
+                                    <input type="button" value="-" class="button-minus btn btn-sm" data-field="quantity" />
+                                    <input type="number" step="1" max="10" value="1" name="quantity" class="quantity-field form-control-sm form-input" />
+                                    <input type="button" value="+" class="button-plus btn btn-sm" data-field="quantity" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="mt-3 row justify-content-start g-2 align-items-center">
-                            <div class="col-xxl-4 col-lg-4 col-md-5 col-5 d-grid">
-                                <!-- button -->
-                                <!-- btn -->
-                                 <form action="<?= base_url('add_to_cart');?>" method="post">
-                                     <button type="submit" class="btn btn-primary">
-                                         <i class="feather-icon icon-shopping-bag me-2"></i>
-                                         Add to cart
-                                     </button>
-                                 </form>
+                            <div class="mt-3 row justify-content-start g-2 align-items-center">
+                                <div class="col-xxl-4 col-lg-4 col-md-5 col-5 d-grid">
+                                    <!-- button -->
+                                    <!-- btn -->
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="feather-icon icon-shopping-bag me-2"></i>
+                                        Add to cart
+                                    </button>
+                                </div>
+                                <div class="col-md-4 col-4">
+                                    <!-- btn -->
+                                    <a class="btn btn-light" href="#" data-bs-toggle="tooltip" data-bs-html="true" aria-label="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                                    <a class="btn btn-light" href="shop-wishlist.html" data-bs-toggle="tooltip" data-bs-html="true" aria-label="Wishlist"><i class="feather-icon icon-heart"></i></a>
+                                </div>
                             </div>
-                            <div class="col-md-4 col-4">
-                                <!-- btn -->
-                                <a class="btn btn-light" href="#" data-bs-toggle="tooltip" data-bs-html="true" aria-label="Compare"><i class="bi bi-arrow-left-right"></i></a>
-                                <a class="btn btn-light" href="shop-wishlist.html" data-bs-toggle="tooltip" data-bs-html="true" aria-label="Wishlist"><i class="feather-icon icon-heart"></i></a>
+                            <!-- hr -->
+                            <hr class="my-6" />
+                            <div>
+                                <!-- table -->
+                                <table class="table table-borderless mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td>Product Code:</td>
+                                            <td><?= $detail->code_product;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Availability:</td>
+                                            <td>In Stock</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Type:</td>
+                                            <td>Script</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                        </div>
-                        <!-- hr -->
-                        <hr class="my-6" />
-                        <div>
-                            <!-- table -->
-                            <table class="table table-borderless mb-0">
-                                <tbody>
-                                    <tr>
-                                        <td>Product Code:</td>
-                                        <td><?= $detail->code_product;?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Availability:</td>
-                                        <td>In Stock</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Type:</td>
-                                        <td>Script</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        </form>
+
                         <div class="mt-8">
                             <!-- dropdown -->
                             <div class="dropdown">
@@ -159,6 +165,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

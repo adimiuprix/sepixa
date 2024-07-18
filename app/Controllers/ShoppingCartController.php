@@ -16,25 +16,20 @@ class ShoppingCartController extends BaseController
 
     public function Cart()
     {
+        $imgcart = base_url('public/uploads/product/');
         $cart = $this->cart;
-        return view('cart', compact('cart'));
+        return view('cart', compact('cart', 'imgcart'));
     }
 
     public function AddToCart()
     {
         $data = [
-            [
-                'id'      => '1',
-                'qty'     => 18,
-                'price'   => 400,
-                'name'    => 'T-Shirt',
-            ],
-            [
-                'id'      => '28',
-                'qty'     => 3,
-                'price'   => 8900,
-                'name'    => 'Sobart Kaleng',
-            ],
+            'id'    => $this->request->getPost('id_product'),
+            'name'    => $this->request->getPost('name'),
+            'code'      => $this->request->getPost('code'),
+            'qty'     => $this->request->getPost('quantity'),
+            'price'   => $this->request->getPost('price'),
+            'image'   => $this->request->getPost('image'),
         ];
 
         $this->cart->insert($data);

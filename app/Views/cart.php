@@ -81,7 +81,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-6 col-md-6 col-lg-7">
                                         <div class="d-flex">
-                                            <img src="images/products/product-img-1.jpg" alt="Ecommerce" class="icon-shape icon-xxl">
+                                            <img src="<?= $imgcart . $items['image']; ?>" alt="Ecommerce" class="icon-shape icon-xxl">
                                             <div class="ms-3">
                                                 <!-- title -->
                                                 <a href="shop-single.html" class="text-inherit">
