@@ -12,11 +12,14 @@ $routes->get('product/(:segment)', 'HomepageController::productDetail/$1');
 $routes->post('add_to_cart', 'ShoppingCartController::AddToCart');
 $routes->post('remove_cart/(:any)', 'ShoppingCartController::RemoveCart/$1');
 $routes->get('cart', 'ShoppingCartController::Cart');
+$routes->get('checkout', 'ShoppingCartController::Checkout');
 
 $routes->get('about', 'HomepageController::about');
 $routes->get('therms_and_condition', 'HomepageController::thermscondition');
 $routes->get('contact', 'HomepageController::contact');
 $routes->get('news', 'HomepageController::news');
+
+$routes->match(['get', 'post'], 'login', 'AuthController::login');
 
 $routes->get('ceklic', 'LicenceController::index');
 $routes->post('cekval', 'LicenceController::checkLicence');

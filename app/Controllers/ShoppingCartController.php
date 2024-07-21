@@ -47,4 +47,10 @@ class ShoppingCartController extends BaseController
         return redirect()->to('cart');
     }
 
+    public function Checkout(){
+        if (!session()->has('user_id')) {
+            return redirect()->to('login');
+        }
+    }
+
 }
