@@ -47,6 +47,17 @@ class ShoppingCartController extends BaseController
         return redirect()->to('cart');
     }
 
+    public function UpdateCart($rowid){
+        $data = [
+            'rowid' => $rowid,
+            'qty'   => $this->request->getVar('quantity')
+        ];
+
+        $this->cart->update($data);
+
+        return redirect()->to('cart');
+    }
+
     public function Checkout(){
         if (!session()->has('user_id')) {
             return redirect()->to('login');
