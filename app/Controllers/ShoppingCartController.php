@@ -18,8 +18,9 @@ class ShoppingCartController extends BaseController
     {
         $imgcart = base_url('public/uploads/product/');
         $cart = $this->cart;
+        $tot_item_cart = $cart->total_items();
 
-        return view('cart', compact('cart', 'imgcart'));
+        return view('cart', compact('cart', 'imgcart', 'tot_item_cart'));
     }
 
     public function AddToCart()

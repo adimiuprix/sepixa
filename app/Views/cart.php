@@ -97,6 +97,13 @@
                                  <!-- list group -->
                                  <ul class="list-group list-group-flush">
                                      <!-- list group item -->
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="me-auto">
+                                            <div class="fw-bold">Total item</div>
+                                        </div>
+                                        <span class="fw-bold"><?php echo $tot_item_cart; ?> pcs</span>
+                                    </li>
+
                                      <li class="list-group-item d-flex justify-content-between align-items-start">
                                          <div class="me-auto">
                                              <div class="fw-bold">Subtotal</div>
