@@ -20,9 +20,14 @@ $routes->get('therms_and_condition', 'HomepageController::thermscondition');
 $routes->get('contact', 'HomepageController::contact');
 $routes->get('news', 'HomepageController::news');
 
-$routes->match(['get', 'post'], 'login', 'AuthController::login');
+$routes->get('dashboard', 'AccountController::dashboard');
+$routes->get('order', 'AccountController::order');
+$routes->get('settings', 'AccountController::settings');
 
-$routes->get('ceklic', 'LicenceController::index');
+$routes->match(['get', 'post'], 'login', 'AuthController::login');
+$routes->match(['get', 'post'], 'registration', 'AuthController::register');
+
+$routes->get('licence', 'LicenceController::index');
 $routes->post('cekval', 'LicenceController::checkLicence');
 
 $routes->post('api/licvalidation', 'LicenceController::endpoint');

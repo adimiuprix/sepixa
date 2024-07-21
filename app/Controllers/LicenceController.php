@@ -18,7 +18,8 @@ class LicenceController extends BaseController
     }
 
     public function index(){
-        return view('form');
+        $session = $this->session;
+        return view('licence_check', compact('session'));
     }
 
     public function checkLicence()
@@ -40,10 +41,10 @@ class LicenceController extends BaseController
     {
         $status = false; // Set status awal menjadi false
         $message = "License invalid"; // Set pesan default
-    
+
         $domain = $this->request->getPost('domain');
         $licenseKey = $this->request->getPost('license_key');
-    
+
         if (!empty($domain) && !empty($licenseKey)) {
             $isValid = $this->licenseModel->checkLicense($domain, $licenseKey);
             if ($isValid) {
@@ -53,7 +54,7 @@ class LicenceController extends BaseController
                 $message = "License valid";
             }
         }
-    
+
         return $this->response->setJSON(['status' => $status, 'message' => $message]);
     }
 }

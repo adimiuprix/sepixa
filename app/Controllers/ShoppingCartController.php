@@ -16,11 +16,13 @@ class ShoppingCartController extends BaseController
 
     public function Cart()
     {
+        $session = $this->session;
+
         $imgcart = base_url('public/uploads/product/');
         $cart = $this->cart;
         $tot_item_cart = $cart->total_items();
 
-        return view('cart', compact('cart', 'imgcart', 'tot_item_cart'));
+        return view('cart', compact('cart', 'imgcart', 'tot_item_cart', 'session'));
     }
 
     public function AddToCart()

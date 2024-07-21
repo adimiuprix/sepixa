@@ -34,23 +34,26 @@
                         <li class="nav-item dropdown w-100 w-lg-auto">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="">Sign in</a></li>
-                                <li><a class="dropdown-item" href="">Signup</a></li>
-                                <li><a class="dropdown-item" href="">Forgot Password</a></li>
+                                <?php if($session->logged_in != true):?>
+                                <li><a class="dropdown-item" href="<?= base_url('login')?>">Sign in</a></li>
+                                <li><a class="dropdown-item" href="<?= base_url('registration')?>">Signup</a></li>
+                                <li><a class="dropdown-item" href="#">Forgot Password</a></li>
+                                <?php else:?>
                                 <li class="dropdown-submenu dropend">
                                     <a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="#">My Account</a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="">Orders</a></li>
-                                        <li><a class="dropdown-item" href="">Settings</a></li>
+                                        <li><a class="dropdown-item" href="<?= base_url('order')?>">Orders</a></li>
+                                        <li><a class="dropdown-item" href="<?= base_url('settings')?>">Settings</a></li>
                                         <li><a class="dropdown-item" href="">Address</a></li>
                                         <li><a class="dropdown-item" href="">Payment Method</a></li>
                                         <li><a class="dropdown-item" href="">Notification</a></li>
                                     </ul>
                                 </li>
+                                <?php endif;?>
                             </ul>
                         </li>
                         <li class="nav-item w-100 w-lg-auto">
-                            <a class="nav-link" href="">Dashboard</a>
+                            <a class="nav-link" href="<?= base_url('dashbaord')?>">Dashboard</a>
                         </li>
                         <li class="nav-item dropdown w-100 w-lg-auto dropdown-flyout">
                             <a class="nav-link" href="#" id="navbarDropdownDocs" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>

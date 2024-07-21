@@ -13,20 +13,23 @@
                 <!-- col -->
                 <div class="col-12 col-md-6 offset-lg-1 col-lg-4 order-lg-2 order-1">
                     <div class="mb-lg-9 mb-5">
-                        <h1 class="mb-1 h2 fw-bold">Sign up to FreshCart</h1>
-                        <p>Enter your email to get started.</p>
+                        <h1 class="mb-1 h2 fw-bold">Sign in to FreshCart</h1>
+                        <p>Welcome back to FreshCart! Enter your email to get started.</p>
                     </div>
-                    <form action="<?= base_url('login')?>" method="post" class="needs-validation">
+                    <form action="<?= base_url('registration')?>" method="post" class="needs-validation">
                         <div class="row g-3">
                             <!-- row -->
                             <div class="col-12">
-                                <!-- input -->
+                                <label class="form-label visually-hidden">Username</label>
+                                <input type="text" name="username" class="form-control" placeholder="Username" required>
+                                <div class="invalid-feedback">Please enter username.</div>
+                            </div>
+                            <div class="col-12">
                                 <label class="form-label visually-hidden">Email address</label>
                                 <input type="email" name="email" class="form-control" placeholder="Email" required>
                                 <div class="invalid-feedback">Please enter email.</div>
                             </div>
                             <div class="col-12">
-                                <!-- input -->
                                 <div class="password-field position-relative">
                                     <label class="form-label visually-hidden">Password</label>
                                     <div class="password-field position-relative">
@@ -35,10 +38,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    Forgot password?
-                                    <a href="#">Reset It</a>
+                            <div class="col-12">
+                                <div class="password-field position-relative">
+                                    <label class="form-label visually-hidden">Password confirmation</label>
+                                    <div class="password-field position-relative">
+                                        <input type="password" name="password_confirm" class="form-control fakePassword" placeholder="*****" required>
+                                        <div class="invalid-feedback">Please enter password again.</div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- btn -->
@@ -47,8 +53,8 @@
                             </div>
                             <!-- link -->
                             <div>
-                                Don’t have an account?
-                                <a href="<?= base_url('registration');?>">Sign Up</a>
+                                Have an account?
+                                <a href="login">Sign In</a>
                             </div>
                         </div>
                     </form>

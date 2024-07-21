@@ -10,6 +10,9 @@ class HomepageController extends BaseController
 {
     public function index()
     {
+        // Convert jadi object
+        $session = (object)$this->session->get();
+
         $categories = (new Category)->get()->getResult();
         $products = (new Product())
                 ->select('products.*, categories.name as category_name')
@@ -17,11 +20,13 @@ class HomepageController extends BaseController
                 ->get()
                 ->getResult();
 
-        return view('home', compact('categories', 'products'));
+        return view('home', compact('categories', 'products', 'session'));
     }
 
     public function category(string $slug)
     {
+        $session = $this->session;
+
         $AllCategory = (new Category())->get()->getResultObject();
         $IdCategory = (new Category())->where('slug', $slug)->get()->getRow()->id;
         $products = (new Product())
@@ -31,18 +36,22 @@ class HomepageController extends BaseController
                 ->get()
                 ->getResult();
 
-        return view('categories', compact('AllCategory', 'products'));
+        return view('categories', compact('AllCategory', 'products', 'session'));
     }
 
     public function productDetail(string $slug)
     {
+        $session = $this->session;
+
         $detail = (new Product())->where('slug', $slug)->get()->getRow();
 
-        return view('product_detail', compact('detail'));
+        return view('product_detail', compact('detail', 'session'));
     }
 
     public function allProduct()
     {
+        $session = $this->session;
+
         $AllCategory = (new Category())->get()->getResultObject();
         $products = (new Product())
                 ->select('products.*, categories.name as category_name')
@@ -50,27 +59,35 @@ class HomepageController extends BaseController
                 ->get()
                 ->getResult();
 
-        return view('product', compact('AllCategory', 'products'));
+        return view('product', compact('AllCategory', 'products', 'session'));
     }
 
     public function about()
     {
-        return view('about');
+        $session = $this->session;
+
+        return view('about', compact('session'));
     }
 
     public function thermscondition()
     {
-        return view('therms_n_condition');
+        $session = $this->session;
+
+        return view('therms_n_condition', compact('session'));
     }
 
     public function contact()
     {
-        return view('contact');
+        $session = $this->session;
+
+        return view('contact', compact('session'));
     }
 
     public function news()
     {
-        return view('news');
+        $session = $this->session;
+
+        return view('news', compact('session'));
     }
 
 }

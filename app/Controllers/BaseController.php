@@ -59,5 +59,9 @@ abstract class BaseController extends Controller
         $this->db = \Config\Database::connect();
         $this->session = \Config\Services::session();
         $this->validation = \Config\Services::validation();
+
+        if (!$this->session->has('logged_in')) {
+            $this->session->set('logged_in', false);
+        }
     }
 }
