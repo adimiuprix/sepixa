@@ -9,7 +9,7 @@
                 <!-- card -->
                 <div
                     class="card bg-light border-0 rounded-4"
-                    style="background-image: url(../assets/images/slider/slider-image-1.jpg); background-repeat: no-repeat; background-size: cover; background-position: right">
+                    style="background-image: url(<?= theme('images/slider/slider-image-1.jpg'); ?>); background-repeat: no-repeat; background-size: cover; background-position: right">
                     <div class="card-body p-lg-12">
                         <h1>Welcome back! FreshCart</h1>
                         <p>FreshCart is simple & clean design for developer and designer.</p>

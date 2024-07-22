@@ -54,7 +54,7 @@
                         </li>
                         <?php if($session->logged_in == true):?>
                         <li class="nav-item w-100 w-lg-auto">
-                            <a class="nav-link" href="<?= base_url('dashbaord')?>">Dashboard</a>
+                            <a class="nav-link" href="<?= base_url('dashboard')?>">Dashboard</a>
                         </li>
                         <?php endif;?>
                         <li class="nav-item dropdown w-100 w-lg-auto dropdown-flyout">

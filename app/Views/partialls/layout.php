@@ -283,8 +283,6 @@
             </div>
         </div>
 
-        <?= $this->include('partialls/shop_cart');?>
-
         <?= $this->renderSection('content'); ?>
 
         <?= $this->include('partialls/footer');?>

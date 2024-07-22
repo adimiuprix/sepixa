@@ -20,6 +20,7 @@
                 <!-- Icon right -->
                 <div class="col-lg-12 col-xxl-12 col-md-12 col-12 text-end">
                     <div class="list-inline">
+                        <?php if($session->logged_in != true):?>
                         <div class="list-inline-item me-5">
                             <a href="#!" class="text-muted" data-bs-toggle="modal" data-bs-target="#userModal">
                                 <svg
@@ -38,8 +39,9 @@
                                 </svg>
                             </a>
                         </div>
+                        <?php endif;?>
                         <div class="list-inline-item me-5 me-lg-0">
-                            <a class="text-muted position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" href="#offcanvasExample" role="button" aria-controls="offcanvasRight">
+                            <a class="text-muted position-relative" href="<?= base_url('cart');?>">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -56,7 +58,7 @@
                                     <path d="M16 10a4 4 0 0 1-8 0"></path>
                                 </svg>
                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
-                                1
+                                2
                                 <span class="visually-hidden">unread messages</span>
                                 </span>
                             </a>

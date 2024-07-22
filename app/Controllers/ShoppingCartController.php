@@ -62,9 +62,13 @@ class ShoppingCartController extends BaseController
     }
 
     public function Checkout(){
+        $session = $this->session;
+
         if (!session()->has('user_id')) {
             return redirect()->to('login');
         }
+
+        return view('checkout', compact('session'));
     }
 
 }
