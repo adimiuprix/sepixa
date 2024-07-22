@@ -7,26 +7,26 @@
                 <div class="col-md-5 col-xl-6">
                     <!-- img slide -->
                     <div class="product" id="product">
-                        <div class="zoom" onmousemove="zoom(event)" style="background-image: url(https://fecart.com/public/uploads/product/product-single-img-1.jpg)">
+                        <div class="zoom" onmousemove="zoom(event)" style="background-image: url(<?= $single_img . esc($detail->image_1);?>)">
                             <!-- img -->
-                            <img src="https://fecart.com/public/uploads/product/product-single-img-1.jpg" alt="" />
+                            <img src="<?= $single_img . esc($detail->image_1);?>" alt="" />
                         </div>
                         <div>
-                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(https://fecart.com/public/uploads/product/product-single-img-2.jpg)">
+                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(<?= $single_img . $detail->image_2;?>)">
                                 <!-- img -->
-                                <img src="https://fecart.com/public/uploads/product/product-single-img-2.jpg" alt="" />
+                                <img src="<?= $single_img . $detail->image_2;?>" alt="" />
                             </div>
                         </div>
                         <div>
-                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(https://fecart.com/public/uploads/product/product-single-img-3.jpg)">
+                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(<?= $single_img . $detail->image_3;?>)">
                                 <!-- img -->
-                                <img src="https://fecart.com/public/uploads/product/product-single-img-3.jpg" alt="" />
+                                <img src="<?= $single_img . $detail->image_3;?>" alt="" />
                             </div>
                         </div>
                         <div>
-                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(https://fecart.com/public/uploads/product/product-single-img-4.jpg)">
+                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(<?= $single_img . $detail->image_4;?>)">
                                 <!-- img -->
-                                <img src="https://fecart.com/public/uploads/product/product-single-img-4.jpg" alt="" />
+                                <img src="<?= $single_img . $detail->image_4;?>" alt="" />
                             </div>
                         </div>
                     </div>
@@ -36,25 +36,25 @@
                             <div class="col-3">
                                 <div class="thumbnails-img">
                                     <!-- img -->
-                                    <img src="https://fecart.com/public/uploads/product/product-single-img-1.jpg" alt="" />
+                                    <img src="<?= $single_img . $detail->image_1;?>" alt="" />
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="thumbnails-img">
                                     <!-- img -->
-                                    <img src="https://fecart.com/public/uploads/product/product-single-img-2.jpg" alt="" />
+                                    <img src="<?= $single_img . $detail->image_2;?>" alt="" />
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="thumbnails-img">
                                     <!-- img -->
-                                    <img src="https://fecart.com/public/uploads/product/product-single-img-3.jpg" alt="" />
+                                    <img src="<?= $single_img . $detail->image_3;?>" alt="" />
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="thumbnails-img">
                                     <!-- img -->
-                                    <img src="https://fecart.com/public/uploads/product/product-single-img-4.jpg" alt="" />
+                                    <img src="<?= $single_img . $detail->image_4;?>" alt="" />
                                 </div>
                             </div>
                         </div>

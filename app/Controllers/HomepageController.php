@@ -43,9 +43,10 @@ class HomepageController extends BaseController
     {
         $session = $this->session;
 
-        $detail = (new Product())->where('slug', $slug)->get()->getRow();
+        $single_img = base_url('public/uploads/product_single/');
+        $detail = (new Product())->where('slug', $slug)->join('single_images', 'single_images.img_parent = products.id')->get()->getRow();
 
-        return view('product_detail', compact('detail', 'session'));
+        return view('product_detail', compact('detail', 'single_img', 'session'));
     }
 
     public function allProduct()

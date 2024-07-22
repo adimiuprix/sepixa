@@ -33,6 +33,10 @@ class ProductTbl extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '80',
             ],
+            'single_img' => [
+                'type' => 'INT',
+                'constraint' => '100',
+            ],
             'description' => [
                 'type' => 'TEXT',
                 'null' => true,
