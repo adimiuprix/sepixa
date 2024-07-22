@@ -20,12 +20,13 @@ $routes->get('therms_and_condition', 'HomepageController::thermscondition');
 $routes->get('contact', 'HomepageController::contact');
 $routes->get('news', 'HomepageController::news');
 
-$routes->get('dashboard', 'AccountController::dashboard');
+$routes->get('dashboard', 'DashboardController::index');
 $routes->get('order', 'AccountController::order');
 $routes->get('settings', 'AccountController::settings');
 
 $routes->match(['get', 'post'], 'login', 'AuthController::login');
 $routes->match(['get', 'post'], 'registration', 'AuthController::register');
+$routes->get('logout', 'AuthController::logout');
 
 $routes->get('licence', 'LicenceController::index');
 $routes->post('cekval', 'LicenceController::checkLicence');

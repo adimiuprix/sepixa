@@ -33,9 +33,7 @@ class AuthController extends BaseController
             $user = $userModel->where('email', $email)->first();
 
             if (!$user || !password_verify($password, $user['password'])) {
-                return view('auth/login', [
-                    'error' => 'Email atau password salah.'
-                ]);
+                return view('auth/login', compact('session'));
             }
 
             $session = $this->session;
@@ -43,7 +41,7 @@ class AuthController extends BaseController
             $session->set('email', $user['email']);
             $session->set('logged_in', true);
 
-            return redirect()->to('/dashboard'); // Ubah ke rute yang sesuai
+            return redirect()->to('dashboard'); // Ubah ke rute yang sesuai
         }
 
         return view('auth/login', compact('session'));
@@ -107,5 +105,10 @@ class AuthController extends BaseController
         }
 
         return view('auth/register', compact('session'));
+    }
+
+    public function logout(){
+        $this->session->destroy();
+        return redirect()->to('login');
     }
 }

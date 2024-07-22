@@ -77,4 +77,5 @@
             </div>
         </div>
     </section>
-</main><?= $this->endSection(); ?>
+</main>
+<?= $this->endSection(); ?>

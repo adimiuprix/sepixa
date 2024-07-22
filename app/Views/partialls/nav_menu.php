@@ -52,9 +52,11 @@
                                 <?php endif;?>
                             </ul>
                         </li>
+                        <?php if($session->logged_in == true):?>
                         <li class="nav-item w-100 w-lg-auto">
                             <a class="nav-link" href="<?= base_url('dashbaord')?>">Dashboard</a>
                         </li>
+                        <?php endif;?>
                         <li class="nav-item dropdown w-100 w-lg-auto dropdown-flyout">
                             <a class="nav-link" href="#" id="navbarDropdownDocs" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
                             <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="navbarDropdownDocs">
