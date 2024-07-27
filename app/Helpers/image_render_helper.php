@@ -9,6 +9,9 @@ if (!function_exists('render')) {
         }elseif($input == 'product'){
             $PathObj = base_url('public/uploads/product/' . $item);
         }
+        elseif($input == 'slider'){
+            $PathObj = base_url('public/uploads/slider/' . $item);
+        }
         return $PathObj;
     }
 }

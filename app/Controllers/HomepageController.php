@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\Slider;
 use App\Models\Category;
 use App\Models\Product;
 
@@ -12,7 +13,7 @@ class HomepageController extends BaseController
     {
         // Convert jadi object
         $session = (object)$this->session->get();
-
+        $sliders = (new Slider)->get()->getResult();
         $categories = (new Category)->get()->getResult();
         $products = (new Product())
                 ->select('products.*, categories.name as category_name')
@@ -20,7 +21,7 @@ class HomepageController extends BaseController
                 ->get()
                 ->getResult();
 
-        return view('home', compact('categories', 'products', 'session'));
+        return view('home', compact('sliders', 'categories', 'products', 'session'));
     }
 
     public function category(string $slug)

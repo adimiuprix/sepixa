@@ -1,7 +1,7 @@
 <?= $this->extend('partialls/layout') ?>
 <?= $this->section('content') ?>
 <main>
-    <?= $this->include('fragment/slider');?>
+    <?= $this->include('partialls/slider');?>
 
     <!-- Category Section Start-->
     <section class="mb-lg-10 mt-lg-14 my-8">
